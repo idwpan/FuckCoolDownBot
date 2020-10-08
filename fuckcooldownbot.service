@@ -1,0 +1,12 @@
+[Unit]
+Description=Run FuckCoolDownBot script
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/FuckCoolDownBot/bot.py
+Environment=SUDO_USER=pi
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
