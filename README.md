@@ -15,25 +15,27 @@ client_secret -> labeled as "secret"
 ```
 
 5. Clone this repo to `~/FuckCoolDownBot`
-6. Edit `~/FuckCoolDownBot/bot.py` and fill in the following values with your bot account info, some collected above.
+
+6. Make a `~/.configs/praw.ini` file with the following contents, filling in your own values
 
 ```
-# Replace these values!!!
-reddit = praw.Reddit(client_id="client id",
-	 client_secret="client secret",
-	 username="username",
-	 password="password",
-	 user_agent="user agent")
+[FuckCoolDownBot2]
+client_id=XXXXXXXXX
+client_secret=XXXXXXXXXXXXXXXXXXXX
+password=XXXXXXXXXXXXXXXXXX
+username=XXXXXXXXXXXXXXXX
 ```
 
-Note: user_agent can be anything, it doesn't matter
+7. Install Python dependencies
 
-7. Install `praw` by running `sudo python3 -m pip install praw`1
+```
+$ python3 -m pip install -r requirements.txt
+```
 8. Run bot with `python3 bot.py`
 
 ### Bonus
 
-Start automatically as a service
+Start automatically as a service - figure it out :)
 
 1. Edit `fuckcooldownbot.service` and replace `pi` with your username
 2. Copy `fuckcooldownbot.service` to `/etc/systemd/system/fuckcooldownbot.service`. `sudo cp fuckcooldownbot.service /etc/systemd/system/fuckcooldownbot.service`
